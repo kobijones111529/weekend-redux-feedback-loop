@@ -19,9 +19,7 @@ function CommentsPage() {
         value={commentsInput}
         onChange={event => setCommentsInput(event.target.value)}
       ></textarea>
-      <Link to="/review" onClick={handleNext}>
-        <button>Next</button>
-      </Link>
+      <Link to="/review" onClick={handleNext}>Next</Link>
     </>
   );
 }

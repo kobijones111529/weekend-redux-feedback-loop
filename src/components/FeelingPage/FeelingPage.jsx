@@ -8,22 +8,34 @@ function FeelingPage() {
   const feedback = useSelector(store => store.feedback);
   const [input, setInput] = useState('');
 
-  const inputValid = useMemo(() => {
+  const inputValidated = useMemo(() => {
     if (input.trim() === '') {
-      return false;
+      return null;
     }
 
-    return true;
+    const inputNum = Number(input);
+    if (
+      [
+        Number.isNaN(inputNum),
+        !Number.isInteger(inputNum),
+        inputNum < 0,
+        inputNum > 5
+      ].some(cond => cond)
+    ) {
+      return null;
+    }
+
+    return inputNum;
   }, [input]);
 
   const handleNext = event => {
-    if (!inputValid) {
-      alert('Invalid input');
+    if (inputValidated === null) {
       event.preventDefault();
+      alert('Invalid input');
       return;
     }
 
-    dispatch(setFeedback({ ...feedback, feeling: input }));
+    dispatch(setFeedback({ ...feedback, feeling: inputValidated }));
   };
 
   return (
