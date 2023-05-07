@@ -1,9 +1,11 @@
+// Unique id generator
 const id = (function * () {
   for (let i = 1; ; i++) {
     yield i;
   }
 })();
 
+// "Database"
 const data = [
   {
     feeling: 5,
@@ -16,6 +18,7 @@ const data = [
     return { ...feedback, id: id.next().value };
   });
 
+// Dummy data storage api implementation
 module.exports = {
   getFeedback: async () => [...data],
   addFeedback: async feedback => {

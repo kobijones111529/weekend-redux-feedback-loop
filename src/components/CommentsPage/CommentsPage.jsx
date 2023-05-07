@@ -9,6 +9,7 @@ function CommentsPage() {
   const [commentsInput, setCommentsInput] = useState('');
 
   const handleNext = () => {
+    // Update redux store
     dispatch(setFeedback({ ...feedback, comments: commentsInput }));
   };
 

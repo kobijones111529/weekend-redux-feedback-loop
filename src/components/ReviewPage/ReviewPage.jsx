@@ -6,6 +6,7 @@ import { useMemo } from "react";
 function ReviewPage() {
   const feedback = useSelector(store => store.feedback);
 
+  // Validated feedback or null
   const validatedFeedback = useMemo(() => {
     if (feedback.feeling === null) {
       return null;
@@ -18,6 +19,7 @@ function ReviewPage() {
     return feedback;
   }, [feedback]);
 
+  // Submit feedback
   const handleSubmitFeedback = event => {
     if (validatedFeedback === null) {
       event.preventDefault();
@@ -25,6 +27,7 @@ function ReviewPage() {
       return;
     }
 
+    // Send validated feedback
     addFeedback(validatedFeedback);
   };
 
