@@ -42,7 +42,9 @@ function SupportPage() {
     <>
       <p>How well do you feel supported?</p>
       <input value={input} onChange={event => setInput(event.target.value)} />
-      <Link to="/comments" onClick={handleNext}>Next</Link>
+      <Link to="/comments" onClick={handleNext}>
+        <button disabled={inputValidated === null}>Next</button>
+      </Link>
     </>
   );
 }
