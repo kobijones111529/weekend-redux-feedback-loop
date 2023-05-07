@@ -8,6 +8,7 @@ function SupportPage() {
   const feedback = useSelector(store => store.feedback);
   const [input, setInput] = useState('');
 
+  // Validated input or null
   const inputValidated = useMemo(() => {
     if (input.trim() === '') {
       return null;
@@ -35,6 +36,7 @@ function SupportPage() {
       return;
     }
 
+    // Update redux store
     dispatch(setFeedback({ ...feedback, support: inputValidated }));
   };
 

@@ -1,3 +1,8 @@
+/**
+ * Individual student feedback
+ * @param {{feeling: ?number, understanding: ?number, support: ?number, comments: ?string}} state
+ * @param {{type: string, payload: {feeling: ?number, understanding: ?number, support: ?number, comments: ?string}}} action
+ */
 export const feedback = (
   state = {
     feeling: null,

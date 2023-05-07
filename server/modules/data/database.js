@@ -1,5 +1,6 @@
 const pool = require('../pool');
 
+// Real database storage api implementation
 module.exports = {
   getFeedback: async () => {
     const query = `
