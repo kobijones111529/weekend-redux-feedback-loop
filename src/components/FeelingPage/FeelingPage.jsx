@@ -42,7 +42,9 @@ function FeelingPage() {
     <>
       <p>How are you feeling?</p>
       <input value={input} onChange={event => setInput(event.target.value)} />
-      <Link to="/understanding" onClick={handleNext}>Next</Link>
+      <Link to="/understanding" onClick={handleNext}>
+        <button disabled={inputValidated === null}>Next</button>
+      </Link>
     </>
   );
 }

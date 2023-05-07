@@ -42,7 +42,9 @@ function UnderstandingPage() {
     <>
       <p>How well are you understanding the content?</p>
       <input value={input} onChange={event => setInput(event.target.value)} />
-      <Link to="/support" onClick={handleNext}>Next</Link>
+      <Link to="/support" onClick={handleNext}>
+        <button disabled={inputValidated === null}>Next</button>
+      </Link>
     </>
   );
 }
