@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getFeedback } from "../../api/dummy";
+import { getFeedback } from "../../api/server";
 
 function AdminPage() {
   const [feedback, setFeedback] = useState([]);

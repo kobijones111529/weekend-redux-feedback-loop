@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom/cjs/react-router-dom";
-import { addFeedback } from "../../api/dummy";
+import { addFeedback } from "../../api/server";
 
 function ReviewPage() {
   const feedback = useSelector(store => store.feedback);
